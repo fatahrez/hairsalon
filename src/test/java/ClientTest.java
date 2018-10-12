@@ -1,8 +1,21 @@
 import static  org.junit.Assert.*;
 import  org.junit.*;
+import org.sql2o.Connection;
+import org.sql2o.Sql2o;
 
 
 public class ClientTest {
+    @Before
+    public void setUp() {
+        DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/hair_salon_test", "fatah", "6674fatah");
+    }
+    @After
+    public void tearDown(){
+        try(Connection con = DB.sql2o.open()){
+            String sql = "DELETE FROM client *;";
+            con.createQuery(sql).executeUpdate();
+        }
+    }
     @Test
     public void clientReturnsAnInstanceOfObject_object(){
         Client client = new Client("shiro", 20, "may", "koma");

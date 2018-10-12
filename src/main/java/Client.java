@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Client {
-    private String mName;
-    private Integer mAge;
-    private String mFirstAppearance;
-    private String mNeighbourhood;
-    public int mId;
+    private String name;
+    private Integer age;
+    private String appearance;
+    private String neighbourhood;
+    public int id;
     private static List<Client> instances = new ArrayList<Client>();
 
     public Client(String name, Integer age, String firstAppearance, String neighbourhood){
@@ -33,6 +33,10 @@ public class Client {
         return instances.get(id - 1);
     }
 
+    public String getName(){
+
+        return mName;
+    }
     public Integer getAge(){
 
         return mAge;
