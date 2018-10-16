@@ -9,12 +9,10 @@ public class Client {
     private String style;
     private int stylistId;
 
-    public Client(String name, Integer age, String firstAppearance, String neighbourhood){
+    public Client(String name, String style, int stylistId){
         this.name =name;
-        this.age = age;
-        this.firstappearance = firstAppearance;
-        this.neighbourhood = neighbourhood;
-
+        this.style = style;
+        this.stylistId = stylistId;
     }
 
     public int getId(){
