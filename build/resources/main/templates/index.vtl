@@ -16,6 +16,26 @@
     </div>
   </div>
   <div class="col-md-6">
-    
+    <div class="card">
+      <form action="/client" method="post">
+        <h2>Add a new Client</h2>
+        <div class="form-group">
+          <label for="clientName">Client Name</label>
+          <input type="text" id="clientName" name="clientName">
+        </div>
+        <div class="form-group">
+          <label for="clientStyle">Stylist's Style</label>
+          <input type="text" id="clientStyle" name="clientStyle">
+        </div>
+
+        <label for=":id">Select a stylist</label>
+        <select id=':id' name=':id' type='text'>
+          #foreach($stylist in $stylists)
+          <option value="$stylist.getId()">$stylist.getName()</option>
+          #end
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </div>
 </div>
