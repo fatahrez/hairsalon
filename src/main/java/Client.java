@@ -3,11 +3,11 @@ import java.util.ArrayList;
 import org.sql2o.*;
 
 public class Client {
-    private String name;
-    private Integer age;
-    private String firstappearance;
-    private String neighbourhood;
+    
     private int id;
+    private String name;
+    private String style;
+    private int stylistId;
 
     public Client(String name, Integer age, String firstAppearance, String neighbourhood){
         this.name =name;
