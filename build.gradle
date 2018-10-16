@@ -15,4 +15,7 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'org.sql2o', name: 'sql2o', version: '1.5.4'
     compile group: 'org.postgresql', name: 'postgresql', version: "9.4-1201-jdbc41"
+    compile group: 'com.sparkjava', name:'spark-core', version: '2.5'
+    compile 'com.sparkjava:spark-template-velocity:2.5.5'
+    compile 'com.sparkjava:spark-debug-tools:0.5'
 }
