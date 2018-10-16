@@ -24,19 +24,14 @@ public class Client {
 
         return name;
     }
-    public Integer getAge(){
+    public String getClientStyle(){
 
-        return age;
+        return style;
     }
-    public String getFirstAppearance(){
+    public int getStylistId(){
 
-        return firstappearance;
+        return stylistId;
     }
-    public String getNeighbourhood(){
-
-        return neighbourhood;
-    }
-
     public static List<Client> all() {
         String sql = "SELECT id, name, firstappearance FROM clients";
            try(Connection con = DB.sql2o.open()) {
@@ -66,12 +61,11 @@ public class Client {
 
     public void save(){
         try(Connection con = DB.sql2o.open()){
-            String sql = "INSERT INTO clients(name, age, firstappearance, neighbourhood) VALUES (:name, :age, :firstappearance, :neighbourhood)";
+            String sql = "INSERT INTO clients(name, style, stylistId) VALUES (:name, :style, :stylistId)";
             this.id = (int) con.createQuery(sql, true)
             .addParameter("name", this.name)
-            .addParameter("age", this.age)
-            .addParameter("firstappearance", this.firstappearance)
-            .addParameter("neighbourhood", this.neighbourhood)
+            .addParameter("style", this.style)
+            .addParameter("stylistId", this.stylistId)
             .executeUpdate()
             .getKey();
         }
