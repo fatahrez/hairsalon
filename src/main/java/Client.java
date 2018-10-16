@@ -16,20 +16,16 @@ public class Client {
     }
 
     public int getId(){
-
         return id;
     }
 
-    public String getName(){
-
+    public String getClientName(){
         return name;
     }
     public String getClientStyle(){
-
         return style;
     }
     public int getStylistId(){
-
         return stylistId;
     }
     public static List<Client> all() {
@@ -79,5 +75,26 @@ public class Client {
         }
     }
 
+    public void deleteClient(){
+        try(Connection con = DB.sql2o.open()){
+            String sql = "DELETE FROM clients WHERE id = :id";
+            con.createQuery(sql)
+            .addParameter("id", id)
+            .executeUpdate();
+        }
+    }
 
+    @Override
+    public boolean equals(Object otherClient){
+        if(!(otherClient instanceof Client)){
+            return false;
+        }
+        else{
+            Client newClient = (Client) otherClient;
+
+            return this.getClientName().equals(newClient.getClientName()) &&
+            this.getId() == newClient.getId() &&
+            this.getStylistId() == newClient.getStylistId();
+        }
+    }
 }
