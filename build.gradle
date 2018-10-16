@@ -1,9 +1,14 @@
-plugins {
-    id 'java'
-}
+// plugins {
+//     id 'java'
+// }
+apply plugin: 'java'
+apply plugin: 'application'
 
-group 'com.ephantus'
-version '1.0-SNAPSHOT'
+group 'com.lukmo'
+archivesBaseName = "salon"
+version = '1.0'
+applicationName = "salon"
+mainClassName = "App"
 
 sourceCompatibility = 1.8
 
