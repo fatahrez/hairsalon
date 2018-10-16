@@ -75,4 +75,15 @@ public class Stylist {
       .executeUpdate();
     }
   }
+
+  @Override
+  public boolean equals(Object otherStylist){
+    if(!(otherStylist instanceof Stylist)){
+      return false;
+    }
+    else{
+      Stylist newStylist = (Stylist) otherStylist;
+      return this.getStylistName().equals(newStylist.getStylistName());
+    }
+  }
 }
