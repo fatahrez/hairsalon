@@ -28,12 +28,20 @@ public class Stylist {
   } 
   public List<Client> getClients(){
     try(Connection con = DB.sql2o.open()){
-      String sql = "SELECT * FROM clients where stylistid=:id;";
+      String sql = "SELECT * FROM clients where stylistid=:id";
       return con.createQuery(sql)
       .addParameter("id", this.id)
       .executeAndFetch(Client.class);
     }
   }
 
-  
+  public static Stylist find(int id){
+    try(Connection con = DB.sql2o.open()){
+      String sql = "SELECT * FROM stylist where id=:id";
+      Stylist stylist = con.createQuery(sql)
+      .addParameter("id", id)
+      .executeAndFetchFirst(Stylist.class);
+      return stylist;
+    }
+  }
 }
