@@ -62,9 +62,46 @@ public class App {
       model.put("template", "templates/stylist.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
-    post("/stylist/:id", (request, response)->{
-      Map<String, Object> model= new HashMap<String, Object>();
 
+    post("/client/:id", (request, response)->{
+      Map<String, Object> model= new HashMap<String, Object>();
+      Client client = Client.find(Integer.parseInt(request.params(":id")));
+      model.put("stylist", client);
+      model.put("template", "templates/viewClients.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/about", (request, response)->{
+      Map<String, Object> model= new HashMap<String, Object>();
+      model.put("clients", Client.all());
+      model.put("template", "templates/AboutUs.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/stylist/:id/viewClients", (request, response)->{
+        Map<String, Object> model= new HashMap<String, Object>();
+        Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));
+        Client client = Client.find(Integer.parseInt(request.params(":id")));
+        model.put("clients", stylist.getClients());
+        model.put("client", client);
+        model.put("stylist", stylist);
+        model.put("template", "templates/viewClients.vtl");
+        return new ModelAndView(model, layout);
+      }, new VelocityTemplateEngine());
+
+    post("/client/:client_id/update", (request, response)->{
+      Map<String, Object> model= new HashMap<String, Object>();
+      Client client = Client.find(Integer.parseInt(request.params(":id")));
+      model.put("client", client);
+      model.put("template", "templates/updateClient.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/client/:client_id/update", (request, response)->{
+      Map<String, Object> model= new HashMap<String, Object>();
+      Client client = Client.find(Integer.parseInt(request.params(":id")));
+      model.put("client", client);
+      model.put("template", "templates/updateClient.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
