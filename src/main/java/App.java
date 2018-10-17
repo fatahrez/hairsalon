@@ -41,7 +41,7 @@ public class App {
     get("/stylist", (reqeust, response)->{
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("stylists", Stylist.allStylist());
-      model.put("template", "template/stylist.vtl");
+      model.put("template", "templates/stylist.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 

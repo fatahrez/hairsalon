@@ -13,7 +13,7 @@ public class Stylist {
   public String getStylistName(){
     return name;
   }
-  public String style(){
+  public String getStyle(){
     return style;
   }
   public int getId(){

@@ -31,7 +31,7 @@
         <label for=":id">Select a stylist</label>
         <select id=':id' name=':id' type='text'>
           #foreach($stylist in $stylists)
-          <option value="$stylist.getId()">$stylist.getName()</option>
+          <option value="$stylist.getId()">$stylist.getStyleName()</option>
           #end
         </select>
         <button type="submit">Submit</button>
