@@ -34,9 +34,15 @@ public class App {
       String style = request.queryParams("style");
       Stylist newStylist = new Stylist(name, style);
       newStylist.save();
-      model.put("template", "templates/stylist.vtl");
+      model.put("template", "templates/style-success.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/stylist", (reqeust, response)->{
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("stylists", Stylist.allStylist());
+      model.put("template", "template/stylist.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 }
