@@ -24,3 +24,6 @@ dependencies {
     compile 'com.sparkjava:spark-template-velocity:2.5.5'
     compile 'com.sparkjava:spark-debug-tools:0.5'
 }
+
+defaultTasks = ['clean']
+task stage(dependsOn: ['clean', 'installApp'])
