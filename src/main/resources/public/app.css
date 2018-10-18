@@ -1,0 +1,14 @@
+.card{
+  padding: 20px;
+
+}
+input{
+  border-radius: 3px;
+}
+body{
+  background: url("https://thumbs.dreamstime.com/z/vintage-fashion-woman-long-hair-flat-illustration-isolated-white-background-vector-illustration-online-stores-beauty-122090319.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -1,12 +1,12 @@
-#foreach($stylist in $stylists)
-  <div class="styleCard">
+<div class="card">
+  #foreach($stylist in $stylists)
     <p>STYLIST'S NAME</p>
-    <br>
     <p class="displayName">$stylist.getStylistName()</p>
     <p>STYLIST'S STYLE</p>
-    <p>$stylist.getStyle()</p>
+    <p class="displayStyle">$stylist.getStyle()</p>
     <a href="/stylist/$stylist.getId()/viewClients"><button>View stylist</button></a>
+  #end
   </div>
-#end
+
 
 <a href="/"><button>Add New stylist</button></a>

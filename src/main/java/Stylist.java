@@ -1,5 +1,5 @@
 import java.util.List;
-import org.sql2o.Connection;;
+import org.sql2o.Connection;
 public class Stylist {
   private int id;
   private String name;
