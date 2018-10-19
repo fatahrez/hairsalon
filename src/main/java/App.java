@@ -65,14 +65,14 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-      //Post method for deleting client
-      post("/client/:id", (request, response) -> {
-        Map<String, Object> model = new HashMap<>();
-        Client client = Client.find(Integer.parseInt(request.params(":id")));
-        client.deleteClient();
-        model.put("stylist", client);
-        model.put("template", "templates/viewClients.vtl");
-        return new ModelAndView(model, layout);
+    //Post method for deleting client
+    post("/client/:id", (request, response) -> {
+      Map<String, Object> model = new HashMap<>();
+      Client client = Client.find(Integer.parseInt(request.params(":id")));
+      client.deleteClient();
+      model.put("stylist", client);
+      model.put("template", "templates/viewClients.vtl");
+      return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     //Post Method to delete stylist
