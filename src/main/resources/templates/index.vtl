@@ -1,34 +1,34 @@
 <div class="row">
   <div class="col-md-6">
-    <div class="card">
+    <div class="card cardform">
       <form action="/stylist" method="post" class="form-group">
         <h2>Add new stylist</h2>
-        <div>
+        <div class="form-group">
           <label for="name">Stylist Name</label>
-          <input type="text" id="name" name="name">
+          <input class="form-control" type="text" id="name" name="name">
         </div>
-        <div>
+        <div class="form-group">
           <label for="style">Stylist's Style</label>
-          <input type="text" id="style" name="style">
+          <input class="form-control" type="text" id="style" name="style">
         </div>
         <button class="btn btn-info" type="submit">Submit</button>
         </form>
     </div>
   </div>
   <div class="col-md-6">
-    <div class="card">
+    <div class="card cardform">
       <form action="/client" method="post" class="form-group">
         <h2>Add a new Client</h2>
-        <div>
+        <div class="form-group">
           <label for="clientName">Client Name</label>
-          <input type="text" id="clientName" name="clientName">
+          <input class="form-control" type="text" id="clientName" name="clientName">
         </div>
-        <div>
+        <div class="form-group">
           <label for="clientStyle">Stylist's Style</label>
-          <input type="text" id="clientStyle" name="clientStyle">
+          <input class="form-control" type="text" id="clientStyle" name="clientStyle">
         </div>
         
-        <div>
+        <div class="form-group">
         <label for=":id">Select a stylist</label>
           <select id=':id' name=':id' type='text'>
             #foreach($stylist in $stylists)

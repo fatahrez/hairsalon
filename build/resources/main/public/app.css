@@ -1,6 +1,6 @@
 .card{
   padding: 20px;
-
+  background-color: rgba(236, 240, 241,0.8);
 }
 input{
   border-radius: 3px;
@@ -11,4 +11,19 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: 'Rancho', cursive;
+  font-size: 20px;
+}
+.cardform{
+  padding: 20px;
+  margin-top: 2em;
+  
+}
+.stylistcard{
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+}
+.displayName{
+  font-weight: bold;
 }

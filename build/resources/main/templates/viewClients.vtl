@@ -1,15 +1,20 @@
-<div>
-  <div class="card">
+<div container>
+
     #foreach($client in $clients)
-        <p class="header2">CLIENT NAME:</p>
-        <p>$client.getClientName()</p>
-        <p class="header2">CLIENT STYLE:</p>
-        <p>$client.getClientStyle()</p>
-        <a href="/client/$client.getId()/update"><button>Update client</button></a>
+    <div class="card stylistcard">
+        <p><span class="displayName">CLIENT NAME:</span>
+        <br>
+        $client.getClientName()</p>
+        <p><span class="displayName">CLIENT STYLE:</span>
+        <br>
+        $client.getClientStyle()</p>
+        <div class="row">
+        <a class="btn btn-info" href="/client/$client.getId()/update">Update client</a>
         <form action="/client/$client.getId()" method="post">
-          <button type="submit" id="delete-client">Delete client</button>
+          <button class="btn btn-danger" type="submit" id="delete-client">Delete client</button>
         </form>
+         </div>
+      </div>
       #end
-    </div>
+    <a class="btn btn-dark" href="/clients/new">Add new client</a>
 </div>
-<a href="/clients/new"><button>Add new client</button></a>
